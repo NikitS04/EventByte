@@ -1,54 +1,124 @@
-# README and VIDEO
+# **Event Management System**
 
-Your _readme_ goes here
-I have included the video as the demo.mp4 but there may be no audio, if this is the case I have included subtitles in the video to show what I was explaining throughout the video.
+This project is a Flask-based event management system with a responsive HTML interface and robust user role management. It allows superusers, attendees, and guest users to interact with events and tickets seamlessly.
 
-Currently the database is empty, therefore first user created will become the superuser and this cant be changed. All users that you require will have to go through the registering process.
+---
 
-A user login and registration system, it works in a way such that the first user to register wil be the superuser. Every user that registers after will be a normal attendee. Invalid logins are checked for.
-When registering, the password create must be at least a length of 8 characters, this is to reduce the chance of a hacker being able to brute-force an users password.
-This is also true for when changing the password either when logged in or resetting the password via email link.
+## **Features**
 
-The super user will be able to:
-Add events (with a event name, date, length in minutes (upto a max of 12 hours), capacity, location)
-Cancel Event (Send an email to all attendees with tickets to notify them that the evet no longer exists)
-Modify Capacity (Upto a maximum of 10,0000 users)
-View Events
-View Cancelled Events
-View Transaction Log (User Registration, Ticket Allocation, Ticket Cancellation, Event Creation, Event Deletion, Password Changes, )
-Be notfied (email) when the remaining capacity is less than 5% for a given event
-Reset password from login page (forgot password via email link)
-Change password when logged in
-NOT get tickets as they are the superuser
+### **Superuser Features**
+- Add events with details like name, date, duration (up to 12 hours), capacity, and location.
+- Cancel events, notifying all attendees via email.
+- Modify event capacity (up to 100,000 users).
+- View all events, canceled events, and transaction logs.
+- Receive email notifications when an event’s remaining capacity falls below 5%.
+- Reset passwords via email or change passwords while logged in.
+- Superusers cannot acquire tickets for events.
 
+### **Attendee Features**
+- View all events and canceled events.
+- Get tickets (up to 5 per event) with email confirmation.
+- View tickets, including barcodes for validation.
+- Cancel tickets with email confirmations.
+- View the remaining number of tickets (when capacity falls below 5%).
+- Reset passwords via email or change passwords while logged in.
 
-The attendee will be able to:
-View Events
-View Cancelled Events
-Get Tickets (up to a maximum of 5 per attendee) (sent an email for each ticket)
-View Tickets (shows all the required details including barcode found by clicking 'view your barcode here' link)
-Cancel Ticket (sends an email confirm their cancellation)
-View number of tickets remaining (when remaining capacity is at less thean 5%)
-Reset password from login page (forgot password via email link)
-Change password when logged in
+### **Guest User Features**
+- View events and canceled events.
+- View remaining tickets for events (when capacity falls below 5%).
+- Register an account to become an attendee.
 
-The guest user will be able to:
-View Events
-View Cancelled Events
-View number of tickets remaining (when remaining capacity is at less thean 5%)
-Register an account (to become an attendee)
+---
 
-Additional Features to be Marked:
-1 Allows a user to get multiple tickets, upto a maximum of 5 tickets per user per event. At this point (5 tickets for the event for user) the get_ticket button dissapears and user can't get more tickets unless they cancel a ticket that they already have, in which case (now they have 4 tickets) they can get another ticket for the event.
+## **Setup Instructions**
 
-2 Superusers and attendees can change their password using the 'settings' tab, where they enter their current password and then a new password (with repeat new password) to change their password. A suitable error message shows if the user didnt enter the information correctly.
+### **Prerequisites**
+Ensure you have the following installed:
+- Python 3.7+
+- Flask and required dependencies
+- SQLite (for `site.db`)
+- Email service credentials for password reset functionality
 
-The website follows a purple neon theme and all pages (once logged in) uses a navbar to navigate between pages. with the homepage containing some brief information about the website and contains an image carousel showcasing some highlights from past events
+### **Install Dependencies**
+Run the following commands to install required packages and set up the environment:
+```bash
+python3 -m venv vcwk
+source vcwk/bin/activate
+pip install -r requirements.txt
+```
 
+---
 
+## **How to Run**
 
-Your _video_ must replace the `demo.mp4` file in this folder
-I have included the video as the demo.mp4 but there may be no audio, if this is the case I have included subtitles in the video to show what I was explaining throughout the video.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/event-management-system.git
+   cd event-management-system
+   ```
 
-Before submitting your coursework, run `./clean.sh` as this will remove the virtual environment which can be reconstructed locally.
+2. **Run the Application**:
+   Use the provided script:
+   ```bash
+   bash run.sh
+   ```
+   The application will start on `http://127.0.0.1:5000`.
+
+3. **Database Initialization**:
+   The first registered user becomes the superuser. Subsequent registrations are normal attendees.
+
+4. **Access the Application**:
+   Open your browser and navigate to the URL provided in the terminal output.
+
+5. **Clean the Environment**:
+   Use `clean.sh` to clean up temporary files and the virtual environment:
+   ```bash
+   bash clean.sh
+   ```
+
+---
+
+## **Frontend Design**
+The user interface is built with HTML, CSS, and images, following a purple neon theme. Key features include:
+- Responsive navigation via a navbar.
+- Homepage with an image carousel showcasing past events.
+
+---
+
+## **Demo**
+- The demo video (`demo.mp4`) showcases the system's features. Subtitles are included to explain the functionalities.
+
+---
+
+## **Key Components**
+
+- **Flask Application**:
+  - Main app file: `eventbyte.py`
+  - Routing and functionality for events and tickets.
+
+- **Database**:
+  - SQLite database: `site.db`.
+
+- **Scripts**:
+  - `run.sh`: Automates running the Flask application.
+  - `clean.sh`: Cleans up virtual environments and temporary files.
+
+- **Frontend**:
+  - HTML pages and images provide an interactive user experience.
+
+---
+
+## **Future Enhancements**
+- Add dynamic capacity adjustment based on demand.
+- Integrate a payment gateway for ticket purchases.
+- Include analytics for superusers to monitor attendee trends.
+
+---
+
+## **Acknowledgments**
+- Flask for its lightweight yet powerful web framework.
+- SQLite for seamless database integration.
+- Email services for secure password reset and notifications.
+
+---
 

@@ -1,0 +1,127 @@
+html, body {
+    font-family: 'Arial', sans-serif;
+    background-color: #4b0082;
+    background: linear-gradient(to bottom, #800080, #4b0082); 
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.3); 
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8); 
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info p {
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.user-info {
+    margin-right: auto;
+}
+
+.logout-button,
+.action-button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0); 
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-color:rgba(0, 0, 0, 0.7); 
+}
+
+.logout-button:hover,
+.cancel:hover {
+    background-color: rgba(255, 40, 40, 0.7); 
+    border-color:rgba(0, 0, 0, 0.7); 
+}
+
+.error-msg {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.error-msg:hover {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+.ticket {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure the form takes 100% width */
+}
+
+h1 {
+    text-align: center;
+}
+
+.barcode-svg{
+    text-align: center;
+}
+
+.check-ticket {
+    color: white;
+    font-size: 18px;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+.cancel{
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(238, 13, 13, 0); 
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.barcode-img{
+    text-decoration: none; 
+    color:white;
+    font-weight: bold; 
+}

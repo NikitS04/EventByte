@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets</title>
+</head>
+
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mytickets.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            {% if user %}
+                <p class="action-button">Welcome, {{ user.username }}!</p>
+            {% else %}
+                <p>Not logged in</p>
+            {% endif %}
+            <a href="{{ url_for('homepage') }}" class="action-button">Home</a>
+            {% if user.is_superuser %}
+                <a href="{{ url_for('addevent') }}" class="action-button">Add Event</a>
+            {% endif %}
+            {% if user.id == None %}
+                <a href="{{ url_for('viewallevents') }}" class="action-button">View Event Details</a>
+                <a href="{{ url_for('cancelled_events') }}" class="action-button">Cancelled Events</a>
+            {% elif user.is_superuser or user %}
+                <a href="{{ url_for('viewallevents') }}" class="action-button">View Event Details</a>
+                {% if not user.is_superuser %}
+                    <a href="{{ url_for('mytickets') }}" class="action-button">My Tickets</a>
+                {% endif %}
+                <a href="{{ url_for('cancelled_events') }}" class="action-button">Cancelled Events</a>
+                <a href="{{ url_for('change_password') }}" class="action-button">Settings</a>
+            {% endif %}
+            {% if user.is_superuser %}
+                <a href="{{ url_for('transaction_log') }}" class="action-button">Transaction Log</a>
+            {% endif %}
+            
+        </div>
+        <form method="post" action="{{ url_for('logout') }}">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </header>
+    <h1>My Tickets</h1>
+    {% with messages = get_flashed_messages() %}  
+        {% if messages %}
+        <div class="ticket"> 
+           {% for message in messages %}  
+                <p>{{ message }}</p>  
+            {% endfor %}  
+        </div>
+        {% endif %}  
+    {% endwith %}
+    {% if tickets %}
+        {% for ticket in tickets %}
+            {% if ticket.is_cancelled == false %}
+            <div class="ticket">
+                <p>Name: {{ ticket.event.name }}</p>
+                <p>Date: {{ ticket.event.date }}</p>
+                <p>Time: {{ ticket.event.start_time }}</p>
+                <p>Location: {{ ticket.event.location }}</p>
+                <p>Ticket No: {{ ticket.ticket_value }}</p>
+                <div class="barcode.svg">
+                    {{ svgData | safe }}
+                </div>
+                <p><a class="barcode-img" href="/barcode/{{ ticket.id }}">View Your Barcode Here</a></p>
+                <form action="{{ url_for('cancel_ticket', ticket_id=ticket.id) }}" method="post">
+                    <button type="submit" class="cancel">Cancel Ticket</button>
+                </form>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p class="check-ticket">You have no tickets for available events</p>
+    {% endif %}
+
+</body>
+
+</html>

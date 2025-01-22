@@ -1,0 +1,128 @@
+html, body {
+    font-family: 'Arial', sans-serif;
+    background-color: #4b0082;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.3); 
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8); 
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.check-ticket {
+    color: white;
+    font-size: 18px;
+}
+
+.user-info p {
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.user-info {
+    margin-right: auto;
+}
+
+.logout-button,
+.action-button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover,
+.action-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.error-msg {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
+.view-event {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.remaining {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modify-capacity {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modify-capacity:hover {
+    background-color: #45a049;
+}
+
+#cancel-event {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#get-ticket {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#get-ticket:hover {
+    background-color: #0056b3;
+}

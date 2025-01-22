@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #800080, #4b0082); 
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/Night-club-ppl2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    text-align: center;
+    color: #fff;
+}
+
+h2 {
+    color:white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+label {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #0ff;
+    border-radius: 5px;
+    background-color: #333; 
+    color: white; 
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0ff;
+    color: #111; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1af;
+}
+
+.links {
+    color: #800080;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.links a {
+    color: #800080; 
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.error-msg {
+    color: #f00;
+}

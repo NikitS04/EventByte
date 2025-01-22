@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #800080, #4b0082);
+    height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.3); 
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8); 
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info p {
+    margin-right: 20px;
+    padding-right: 10px;
+}
+
+#welcome-user{
+    padding-right: 10px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    color: #fff; 
+    font-size: 20px;
+}
+
+.logout-button,
+.action-button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0); 
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logout-button:hover,
+.action-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-color:rgba(0, 0, 0, 0.7); 
+}
+
+.error-msg {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.error-msg:hover {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
